@@ -18,7 +18,6 @@ def run_game():
     #Create and instance to store game statistics. 
     stats = GameStats(ai_settings)
 
-
     # Set the background color.
     bg_color = (230, 230, 230)
 

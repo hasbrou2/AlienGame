@@ -4,6 +4,7 @@ import pygame
 from bullet import Bullet
 from alien import Alien
 
+
 """Check for key release"""
 def check_keydown_events(event, ai_settings, screen, ship,bullets):
     if event.key == pygame.K_RIGHT:
@@ -123,7 +124,7 @@ def update_screen(ai_settings, screen, ship, aliens, bullets):
 def ship_hit(ai_settings, stats, screen, ship, aliens, bullets):
     """Respond to being hit by aliens"""
     #Decrement ships_left
-    stats.ship -= 1
+    stats.ships_left -= 1
 
     #Empty the list of aliens and bullets.
     aliens.empty()
@@ -140,6 +141,8 @@ def update_aliens(ai_settings, stats, screen, ship, aliens, bullets):
     """Update the positions of all aliens in the fleet."""
     check_fleet_edges(ai_settings, aliens)
     aliens.update()
+    """Look for alien ship collision"""
     if pygame.sprite.spritecollideany(ship, aliens):
         ship_hit(ai_settings, stats, screen, ship, aliens, bullets)
         print("Ship Hit!!!")
+        

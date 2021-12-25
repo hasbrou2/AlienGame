@@ -1,7 +1,7 @@
 class GameStats():
     """Track Game Statistics"""
 
-    def __inti__(self, ai_settings):
+    def __init__(self, ai_settings):
         """Initialize Statistics"""
         self.ai_settings = ai_settings
         self.reset_stats()
